@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pingpang-Game</title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{padding:0;margin:0}
+        h1{text-align: center;color:maroon;}
+        #game{background:lightgreen;margin:50px 450px;width:500px;height:400px;border-radius:2px;border:2px solid greenyellow;}
+        #scoreboard{width:400px;height:100px;background:powderblue;border:2px solid cornflowerblue;margin-left:49px;}
+        .score{width:400px;height:20px;margin-top:10px;}
+        #playground {margin-left:49px;background: #e0ffe0;width: 400px;height: 200px;position: relative;overflow: hidden;border:2px solid cadetblue;}
+        #ball{background: #fbb;position:absolute;width: 20px;height:20px;left:190px;top:90px;border-radius: 10px;}
+        .paddle{background: #bbf;left:50px;top:65px;position:absolute;width:30px;height:70px;text-align: center;line-height:70px;}
+        #paddleB{left:320px;}
+        #menu{margin-left:50px;width:400px;height:40px;}
+        #start{width:80px;height:35px;font-size:20px;margin-left:160px;background: greenyellow;border-radius:5px;}
+        #win{display:none;width:400px;height:80px;border-radius:15px;border:2px solid yellow;position:absolute;top:180px;left:500px;background: coral;}
+        #winbtn{margin-left:160px;width:80px;height:30px;font-size: 18px;background:deeppink;border-radius: 10px;border:2px solid greenyellow;}
+        #help{margin-left: 450px;margin-top:-50px;}
+    </style>
+</head>
+<body>
+<div id="game">
+    <div id="content">
+        <h1>Tangle Ball Game</h1>
+        <div id="scoreboard">
+            <p>计分板</p>
+            <p class="score">Player A: &nbsp;  <span id="scoreA">0</span></p>
+            <p class="score">Player B: &nbsp;  <span id="scoreB">0</span></p>
+        </div>
+        <div id="playground">
+            <div id="paddleA" class="paddle">A</div>
+            <div id="paddleB" class="paddle">B</div>
+            <div id="ball"></div>
+        </div>
+        <div id="menu">
+            <button id="start">Start</button>
+        </div>
+    </div>
+    <div id="win">
+        <h1> Winner is <span id="winner"></span></h1>
+        <button id="winbtn">Replay</button>
+    </div>
+</div>
+<div id="help">
+    <p><strong>Start</strong>开始 &nbsp;<strong>PlayerA:</strong>向上：w &nbsp; 向下：s &nbsp;<strong>PlayerB:</strong>向上：↑ &nbsp; 向下：↓ </p>
+</div>
+
+<!--（一）游戏待改进的地方:
+1.界面(当前的原生css不用任何框架太难看)
+2.乒乓球的形状设置；
+3.再2.的基础上实现更好的碰撞检测方法
+（二）游戏的拓展性：
+1.增加调整游戏难度功能->改变小球的运动速度（定时器时间改变）
+2.增加游戏比分记录->可在界面一侧显示游戏历史比分记录
+....
+-->
+<script src="game.js"></script>
+</body>
+</html>
